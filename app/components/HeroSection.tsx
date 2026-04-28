@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useRef } from "react";
 
 const TAGS = ["Next.js", "ExpressJs", "React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind", "Docker", "Git"];
 
@@ -34,7 +33,7 @@ export default function HeroSection() {
           <div className="lg:hidden flex justify-center mb-8">
             <div className="w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center border border-white/20 rounded-full overflow-hidden glass-card">
               <img 
-                src="/profile.png" 
+                src="/fotoPerfil.png"
                 alt="Anyelo" 
                 className="w-full h-full object-cover"
               />
