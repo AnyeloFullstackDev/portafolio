@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+/* ── Design tokens ─────────────────────────────────────────── */
+@theme inline {
+  --color-void:        #0D0F1A;
+  --color-void-2:      #111320;
+  --color-void-3:      #171A2E;
+  --color-amber:       #F59E0B;
+  --color-amber-bright:#FCD34D;
+  --color-amber-dim:   #92400E;
+  --color-lime:        #A3E635;
+  --color-chalk:       #F5F3EF;
+  --color-chalk-dim:   #9CA3AF;
+  --color-glass:       rgba(255,255,255,0.04);
+  --color-glass-border:rgba(255,255,255,0.08);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono:    "JetBrains Mono", monospace;
+
+  /* Easing tokens */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-void);
+    color: var(--color-chalk);
+    font-family: var(--font-display);
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--color-void); }
+  ::-webkit-scrollbar-thumb { background: var(--color-amber-dim); border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-amber); }
+
+  /* Selection */
+  ::selection { background: rgba(245,158,11,0.3); color: var(--color-chalk); }
+}
+
+/* ── Custom components and utilities ───────────────────────── */
+@layer components {
+  /* ── Utility classes ───────────────────────────────────────── */
+  .orbit-dot-1 { animation: orbit-slow 12s linear infinite; }
+  .orbit-dot-2 { animation: orbit-mid  18s linear infinite; }
+  .orbit-dot-3 { animation: orbit-fast  8s linear infinite; }
+  .ring-1      { animation: ring-spin         25s linear infinite; }
+  .ring-2      { animation: ring-spin-reverse 18s linear infinite; }
+  .ring-3      { animation: ring-spin         40s linear infinite; }
+  .float-anim  { animation: float 6s ease-in-out infinite; }
+  .glow-pulse  { animation: pulse-glow 3s ease-in-out infinite; }
+
+  .animate-fade-up       { animation: fade-up 0.8s var(--ease-bounce) both; }
+  .animate-fade-in-left  { animation: fade-in-left 0.8s var(--ease-bounce) both; }
+  .animate-counter       { animation: counter-up 0.6s var(--ease-bounce) both; }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-900 { animation-delay: 900ms; }
+
+  /* Marquee */
+  .marquee-track {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 24s linear infinite;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+
+  /* Glass card */
+  .glass-card {
+    background: var(--color-glass);
+    border: 1px solid var(--color-glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Noise overlay */
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+    animation: noise 0.5s steps(1) infinite;
+  }
+
+  /* Section title — slashed */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-amber);
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--color-amber);
+  }
+}
+
+/* ── Keyframes ─────────────────────────────────────────────── */
+@keyframes orbit-slow {
+  from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+}
+@keyframes orbit-mid {
+  from { transform: rotate(60deg) translateX(200px) rotate(-60deg); }
+  to   { transform: rotate(420deg) translateX(200px) rotate(-420deg); }
+}
+@keyframes orbit-fast {
+  from { transform: rotate(120deg) translateX(90px) rotate(-120deg); }
+  to   { transform: rotate(480deg) translateX(90px) rotate(-480deg); }
+}
+@keyframes ring-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes ring-spin-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(245,158,11,0.3), 0 0 60px rgba(245,158,11,0.1); }
+  50%       { box-shadow: 0 0 40px rgba(245,158,11,0.6), 0 0 100px rgba(245,158,11,0.2); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-16px); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes reveal-bar {
+  from { width: 0; }
+  to   { width: var(--bar-w, 80%); }
+}
+@keyframes counter-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scan-line {
+  from { top: 0; }
+  to   { top: 100%; }
+}
+@keyframes noise {
+  0%   { background-position: 0 0; }
+  10%  { background-position: -5% -10%; }
+  20%  { background-position: -15% 5%; }
+  30%  { background-position: 7% -25%; }
+  40%  { background-position: 20% 25%; }
+  50%  { background-position: -25% 10%; }
+  60%  { background-position: 15% 5%; }
+  70%  { background-position: 0 15%; }
+  80%  { background-position: 25% 35%; }
+  90%  { background-position: -10% 10%; }
+  100% { background-position: 0 0; }
+}
+
