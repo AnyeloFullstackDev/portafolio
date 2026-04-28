@@ -1,4 +1,3 @@
-import CustomCursor    from "./components/CustomCursor";
 import Navbar          from "./components/Navbar1";
 import HeroSection     from "./components/HeroSection";
 import AboutSection    from "./components/AboutSection";
