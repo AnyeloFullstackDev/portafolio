@@ -139,7 +139,7 @@ export default function ProjectsSection() {
               <span
                 key={`${ri}-${wi}`}
                 className={`mx-4 sm:mx-6 font-black text-lg sm:text-xl tracking-widest uppercase ${
-                  w === "·" ? "text-sky" : "text-white/10"
+                  w === "·" ? "text-sky" : "text-white/50"
                 }`}
               >
                 {w}

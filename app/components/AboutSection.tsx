@@ -48,7 +48,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative sm:py-32 overflow-hidden"
+      className="relative py-16 sm:py-32 overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky/20 to-transparent" />
       <div className="absolute -left-60 top-1/2 -translate-y-1/2 w-[500px] h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-[#6366F1]/5 blur-[120px] pointer-events-none" />
@@ -56,7 +56,7 @@ export default function AboutSection() {
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div className="mb-16 sm:mb-20">
-          <p id="about" className={`section-label mb-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <p      id="about" className={`section-label mb-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             Sobre mí
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
@@ -91,24 +91,19 @@ export default function AboutSection() {
         </div>
 
         {/* Experience Cards — Rediseño Horizontal */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-8">
             {timeline.map((item, i) => (
             <div
               key={item.year}
-              className="relative group"
-              style={{
-                transitionDelay: `${400 + i * 150}ms`,
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(30px)",
-                transition: `opacity 0.7s ease ${400 + i * 150}ms, transform 0.7s ease ${400 + i * 150}ms`,
-              }}
+              className={`relative group transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: `${400 + i * 150}ms` }}
             >
               {/* Year Badge */}
-              <div className="mb-4 inline-flex items-center gap-3">
-                <span className="font-mono text-2xl font-bold" style={{ color: item.color }}>
+              <div className="inline-flex items-center gap-3 mb-3 sm:mb-4 ml-2 sm:ml-0 group-hover:translate-x-1 transition-transform duration-300">
+                <span className="font-mono text-xl sm:text-2xl font-bold" style={{ color: item.color }}>
                   {item.year}
                 </span>
-                <div className="h-px w-8 bg-white/10" />
+                <div className="h-px w-12 bg-gradient-to-r from-white/20 to-transparent" />
               </div>
 
               <div className="glass-card rounded-2xl p-6 sm:p-8 hover:border-white/20 transition-all duration-500 h-full flex flex-col hover:bg-white/[0.02]">
