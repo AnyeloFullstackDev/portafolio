@@ -14,7 +14,7 @@ const timeline = [
     role: "Fullstack Developer",
     company: "Proyecto Personal",
     desc: "Desarrollo de sistemas web escalables con Next.js 16, arquitectura de microservicios y APIs RESTful.",
-    color: "#F59E0B",
+    color: "#0EA5E9",
   },
   {
     year: "2023",
@@ -47,17 +47,16 @@ export default function AboutSection() {
 
   return (
     <section
-      id="about"
       ref={sectionRef}
-      className="relative py-24 sm:py-32 overflow-hidden"
+      className="relative sm:py-32 overflow-hidden"
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#F59E0B]/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky/20 to-transparent" />
       <div className="absolute -left-60 top-1/2 -translate-y-1/2 w-[500px] h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-[#6366F1]/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div className="mb-16 sm:mb-20">
-          <p className={`section-label mb-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <p id="about" className={`section-label mb-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             Sobre mí
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
@@ -66,7 +65,7 @@ export default function AboutSection() {
               style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
             >
               Código{" "}
-              <span className="text-[#F59E0B]">para resolver</span>{" "}
+              <span className="text-sky">para resolver</span>{" "}
               <br />problemas reales
             </h2>
             <p className={`text-[#9CA3AF] max-w-sm xl:max-w-md leading-relaxed text-sm xl:text-base transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
@@ -83,7 +82,7 @@ export default function AboutSection() {
               className="bg-[#0D0F1A] p-6 sm:p-8 xl:p-10 flex flex-col gap-1 hover:bg-[#111320] transition-colors duration-300 group"
               style={{ transitionDelay: `${300 + i * 80}ms` }}
             >
-              <span className="text-3xl sm:text-4xl xl:text-5xl font-black text-[#F59E0B] group-hover:scale-110 inline-block transition-transform duration-300 origin-left">
+              <span className="text-3xl sm:text-4xl xl:text-5xl font-black text-sky group-hover:scale-110 inline-block transition-transform duration-300 origin-left">
                 {s.value}
               </span>
               <span className="text-[#9CA3AF] text-[10px] sm:text-xs font-mono tracking-wide">{s.label}</span>
@@ -116,7 +115,7 @@ export default function AboutSection() {
                 <span className="font-mono text-[10px] tracking-widest uppercase mb-2 block" style={{ color: item.color }}>
                   {item.company}
                 </span>
-                <h3 className="font-bold text-lg sm:text-xl xl:text-2xl mb-4 group-hover:text-[#F59E0B] transition-colors duration-300">
+                <h3 className="font-bold text-lg sm:text-xl xl:text-2xl mb-4 group-hover:text-sky transition-colors duration-300">
                   {item.role}
                 </h3>
                 <p className="text-[#9CA3AF] text-sm xl:text-base leading-relaxed">
@@ -125,7 +124,7 @@ export default function AboutSection() {
                 
                 {/* Decorative element */}
                 <div className="mt-auto pt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="w-12 h-1 rounded-full bg-gradient-to-r from-[#F59E0B] to-transparent" />
+                  <div className="w-12 h-1 rounded-full bg-gradient-to-r from-sky to-transparent" />
                 </div>
               </div>
             </div>

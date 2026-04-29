@@ -6,8 +6,8 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden noise">
       <canvas className="absolute inset-0 w-full h-full pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] xl:w-[800px] xl:h-[800px] rounded-full bg-[#F59E0B]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] rounded-full bg-[#6366F1]/5 blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] xl:w-[800px] xl:h-[800px] rounded-full bg-sky/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] rounded-full bg-sky/5 blur-[100px] pointer-events-none" />
 
       <div className="hidden lg:flex absolute right-[20%] top-[15%] w-64 h-64 sm:w-80 sm:h-80 xl:w-96 xl:h-96 items-center justify-center border border-white/20 rounded-full overflow-hidden glass-card z-20">
         <img 
@@ -53,8 +53,8 @@ export default function HeroSection() {
             <span className="block">
               soy{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-[#F59E0B]">Anyelo</span>
-                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#F59E0B]/15 -skew-x-6 blur-sm" />
+                <span className="relative z-10 text-sky">Anyelo</span>
+                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-sky/15 -skew-x-6 blur-sm" />
               </span>
             </span>
           </h1>
@@ -68,7 +68,7 @@ export default function HeroSection() {
           <div className="flex flex-col xs:flex-row flex-wrap gap-3 sm:gap-4 mb-10 sm:mb-14 animate-fade-up delay-300">
             <a
               href="#projects"
-              className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#F59E0B] text-[#0D0F1A] font-bold text-sm tracking-wide hover:bg-[#FCD34D] transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,158,11,0.4)]"
+              className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-sky text-[#0D0F1A] font-bold text-sm tracking-wide hover:bg-sky-bright transition-all duration-300 hover:shadow-[0_0_30px_rgba(14,165,233,0.4)]"
             >
               Ver proyectos
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,7 +77,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#contact"
-              className="flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-white/10 text-[#F5F3EF] font-medium text-sm tracking-wide hover:border-[#F59E0B]/40 hover:bg-white/5 transition-all duration-300"
+              className="flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-white/10 text-[#F5F3EF] font-medium text-sm tracking-wide hover:border-sky/40 hover:bg-white/5 transition-all duration-300"
             >
               Contactar
             </a>
@@ -88,7 +88,7 @@ export default function HeroSection() {
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-md bg-white/5 border border-white/8 text-[#9CA3AF] font-mono text-xs hover:border-[#F59E0B]/30 hover:text-[#F59E0B] transition-all duration-300 cursor-default"
+                className="px-3 py-1 rounded-md bg-white/5 border border-white/8 text-[#9CA3AF] font-mono text-xs hover:border-sky/30 hover:text-sky transition-all duration-300 cursor-default"
               >
                 {tag}
               </span>

@@ -30,7 +30,7 @@ export default function Navbar() {
           {/* CTA */}
           <a
             href="#contact"
-            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-[#F59E0B]/40 text-[#F59E0B] font-mono text-xs tracking-widest uppercase hover:bg-[#F59E0B]/10 transition-all duration-300"
+            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border-sky/40 text-sky font-mono text-xs tracking-widest uppercase hover:bg-sky/10 transition-all duration-300"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#A3E635] animate-pulse" />
             Disponible
@@ -47,7 +47,7 @@ export default function Navbar() {
               }`}
             />
             <span
-              className={`block w-4 h-0.5 bg-[#F59E0B] transition-all duration-300 ${
+              className={`block w-4 h-0.5 bg-sky transition-all duration-300 ${
                 open ? "opacity-0" : ""
               }`}
             />
@@ -70,7 +70,7 @@ export default function Navbar() {
             key={link.href}
             href={link.href}
             onClick={() => setOpen(false)}
-            className="text-4xl font-bold tracking-tight hover:text-[#F59E0B] transition-colors duration-300"
+            className="text-4xl font-bold tracking-tight hover:text-sky transition-colors duration-300"
             style={{ transitionDelay: `${i * 60}ms` }}
           >
             {link.label}

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const skillGroups = [
   {
     label: "Frontend",
-    color: "#F59E0B",
+    color: "#0EA5E9",
     skills: [
       { name: "React / Next.js", pct: 95 },
       { name: "TypeScript",      pct: 90 },
@@ -49,13 +49,13 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section id="skills" ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       <div className="absolute -left-40 bottom-0 w-[500px] xl:w-[700px] h-[500px] xl:h-[700px] rounded-full bg-[#6366F1]/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
-        <div className="mb-12 sm:mb-16">
+        <div id="skills" className="mb-12 sm:mb-16">
           <p className={`section-label mb-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             Stack
           </p>
@@ -63,7 +63,7 @@ export default function SkillsSection() {
             className={`font-black tracking-tighter leading-[0.95] transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)" }}
           >
-            Mis <span className="text-[#F59E0B]">herramientas</span>
+            Mis <span className="text-sky">herramientas</span>
           </h2>
         </div>
 
@@ -115,10 +115,10 @@ export default function SkillsSection() {
               {tools.map((tool, i) => (
                 <div
                   key={tool}
-                  className="glass-card rounded-xl p-3 sm:p-4 flex items-center gap-2 sm:gap-3 hover:border-[#F59E0B]/30 hover:bg-[#F59E0B]/5 transition-all duration-300 group"
+                  className="glass-card rounded-xl p-3 sm:p-4 flex items-center gap-2 sm:gap-3 hover:border-sky/30 hover:bg-sky/5 transition-all duration-300 group"
                   style={{ opacity: visible ? 1 : 0, transform: visible ? "scale(1)" : "scale(0.9)", transition: `opacity 0.5s ease ${600 + i * 50}ms, transform 0.5s ease ${600 + i * 50}ms` }}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]/40 group-hover:bg-[#F59E0B] transition-colors duration-300 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky/40 group-hover:bg-sky transition-colors duration-300 shrink-0" />
                   <span className="text-[#9CA3AF] text-xs xl:text-sm font-medium group-hover:text-[#F5F3EF] transition-colors duration-300 leading-tight">{tool}</span>
                 </div>
               ))}
@@ -129,7 +129,7 @@ export default function SkillsSection() {
                 <span aria-hidden="true" className="absolute -right-4 -bottom-4 text-[100px] xl:text-[140px] font-black text-white/[0.03] leading-none select-none pointer-events-none">&lt;/&gt;</span>
                 <p className="section-label mb-3">filosofía</p>
                 <blockquote className="text-lg sm:text-xl xl:text-2xl font-bold leading-snug tracking-tight">
-                  "El código es poesía<br /><span className="text-[#F59E0B]">cuando está bien escrito.</span>"
+                  "El código es poesía<br /><span className="text-sky">cuando está bien escrito.</span>"
                 </blockquote>
               </div>
             </div>

@@ -8,8 +8,8 @@ const projects = [
     category: "Fullstack App",
     tech: ["Next.js", "Node.js", "PostgreSQL", "AES256"],
     desc: "Plataforma gubernamental de autenticación y gestión de trámites con microservicios, sesiones cifradas y flujos complejos de negocio.",
-    color: "#F59E0B",
-    accent: "#92400E",
+    color: "#0EA5E9",
+    accent: "#0369A1",
     size: "large",
   },
   {
@@ -127,9 +127,9 @@ export default function ProjectsSection() {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-4 sm:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-      <div className="absolute -right-60 top-1/3 w-[500px] h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-[#F59E0B]/4 blur-[140px] pointer-events-none" />
+      <div className="absolute -right-60 top-1/3 w-[500px] h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-sky/4 blur-[140px] pointer-events-none" />
 
       {/* Marquee */}
       <div className="overflow-hidden mb-16 sm:mb-20 border-y border-white/5 py-3 sm:py-4">
@@ -139,7 +139,7 @@ export default function ProjectsSection() {
               <span
                 key={`${ri}-${wi}`}
                 className={`mx-4 sm:mx-6 font-black text-lg sm:text-xl tracking-widest uppercase ${
-                  w === "·" ? "text-[#F59E0B]" : "text-white/10"
+                  w === "·" ? "text-sky" : "text-white/10"
                 }`}
               >
                 {w}
@@ -149,7 +149,7 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
+      <div id="projects" className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 sm:gap-6 mb-10 sm:mb-14">
           <div>
@@ -161,12 +161,12 @@ export default function ProjectsSection() {
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)" }}
             >
               Lo que he{" "}
-              <span className="text-[#F59E0B]">construido</span>
+              <span className="text-sky">construido</span>
             </h2>
           </div>
           <a
             href="#contact"
-            className={`self-start sm:self-end flex items-center gap-2 text-[#9CA3AF] hover:text-[#F59E0B] font-mono text-xs tracking-widest uppercase transition-all duration-700 delay-200 group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            className={`self-start sm:self-end flex items-center gap-2 text-[#9CA3AF] hover:text-sky font-mono text-xs tracking-widest uppercase transition-all duration-700 delay-200 group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
             Ver todos
             <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

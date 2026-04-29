@@ -45,14 +45,14 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <section id="contact" ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#F59E0B]/20 to-transparent" />
+    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky/20 to-transparent" />
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[600px] xl:w-[900px] h-[350px] xl:h-[500px] rounded-full bg-[#F59E0B]/5 blur-[140px]" />
+        <div className="w-[600px] xl:w-[900px] h-[350px] xl:h-[500px] rounded-full bg-sky/5 blur-[140px]" />
       </div>
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 text-center">
-        <p className={`section-label justify-center mb-6 sm:mb-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <p id="contact" className={`section-label justify-center mb-6 sm:mb-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           Contacto
         </p>
 
@@ -62,8 +62,8 @@ export default function ContactSection() {
         >
           ¿Tienes un{" "}
           <span className="relative inline-block">
-            <span className="relative z-10 text-[#F59E0B]">proyecto</span>
-            <span className="absolute inset-0 bg-[#F59E0B]/10 blur-xl -z-0 rounded-full" />
+            <span className="relative z-10 text-sky">proyecto</span>
+            <span className="absolute inset-0 bg-sky/10 blur-xl -z-0 rounded-full" />
           </span>
           <br />en mente?
         </h2>
@@ -78,7 +78,7 @@ export default function ContactSection() {
             href="https://wa.me/584164214065" 
             target="_blank"
             rel="noopener noreferrer"
-            className="group w-full sm:w-auto flex items-center justify-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#F59E0B] text-[#0D0F1A] font-bold text-sm tracking-wide hover:bg-[#FCD34D] transition-all duration-300 hover:shadow-[0_0_50px_rgba(245,158,11,0.5)] hover:scale-105"
+            className="group w-full sm:w-auto flex items-center justify-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-sky text-[#0D0F1A] font-bold text-sm tracking-wide hover:bg-sky-bright transition-all duration-300 hover:shadow-[0_0_50px_rgba(14,165,233,0.5)] hover:scale-105"
           >
             Enviar mensaje
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -104,7 +104,7 @@ export default function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="w-11 h-11 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-full glass-card flex items-center justify-center text-[#9CA3AF] hover:text-[#F59E0B] hover:border-[#F59E0B]/30 transition-all duration-300 hover:scale-110"
+              className="w-11 h-11 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-full glass-card flex items-center justify-center text-[#9CA3AF] hover:text-sky hover:border-sky/30 transition-all duration-300 hover:scale-110"
             >
               {s.icon}
             </a>
