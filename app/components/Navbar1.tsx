@@ -45,7 +45,7 @@ export default function Navbar() {
         
         {/* Mobile Logo for small screens */}
         <span className="font-bold tracking-tight text-[#F5F3EF] sm:hidden">
-          Anyelo<span className="text-sky">.</span>dev
+          Anyelo
         </span>
 
         {/* Desktop links */}
