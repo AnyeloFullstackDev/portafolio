@@ -52,8 +52,8 @@ function ProjectCard({ p, i, visible }: { p: typeof projects[0]; i: number; visi
         isLarge ? "lg:col-span-2" : ""
       }`}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(40px)",
+        opacity: visible ? 1 : 1, // Always visible on mobile
+        transform: visible ? "translateY(0)" : "md:translateY(40px)",
         transition: `opacity 0.7s ease ${i * 100}ms, transform 0.7s ease ${i * 100}ms, border-color 0.3s`,
       }}
     >
@@ -129,7 +129,7 @@ export default function ProjectsSection() {
   return (
     <section ref={sectionRef} className="relative py-4 sm:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-      <div className="absolute -right-60 top-1/3 w-[500px] h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-sky/4 blur-[140px] pointer-events-none" />
+      <div className="absolute -right-60 top-1/3 w-[300px] h-[300px] md:w-[500px] md:h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-sky/4 blur-[70px] md:blur-[140px] pointer-events-none transform-gpu" />
 
       {/* Marquee */}
       <div className="overflow-hidden mb-16 sm:mb-20 border-y border-white/5 py-3 sm:py-4">
@@ -153,11 +153,11 @@ export default function ProjectsSection() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 sm:gap-6 mb-10 sm:mb-14">
           <div>
-            <p className={`section-label mb-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <p className={`section-label mb-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}>
               Proyectos
             </p>
             <h2
-              className={`font-black tracking-tighter leading-[0.95] transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`font-black tracking-tighter leading-[0.95] transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)" }}
             >
               Lo que he{" "}
@@ -166,7 +166,7 @@ export default function ProjectsSection() {
           </div>
           <a
             href="#contact"
-            className={`self-start sm:self-end flex items-center gap-2 text-[#9CA3AF] hover:text-sky font-mono text-xs tracking-widest uppercase transition-all duration-700 delay-200 group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            className={`self-start sm:self-end flex items-center gap-2 text-[#9CA3AF] hover:text-sky font-mono text-xs tracking-widest uppercase transition-all duration-700 delay-200 group ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}
           >
             Ver todos
             <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

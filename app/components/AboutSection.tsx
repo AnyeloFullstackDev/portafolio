@@ -51,31 +51,31 @@ export default function AboutSection() {
       className="relative py-16 sm:py-32 overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky/20 to-transparent" />
-      <div className="absolute -left-60 top-1/2 -translate-y-1/2 w-[500px] h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-[#6366F1]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute -left-60 top-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-[#6366F1]/5 blur-[60px] md:blur-[120px] pointer-events-none transform-gpu" />
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div className="mb-16 sm:mb-20">
-          <p      id="about" className={`section-label mb-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <p id="about" className={`section-label mb-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}>
             Sobre mí
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             <h2
-              className={`font-black tracking-tighter leading-[0.95] max-w-xl xl:max-w-2xl transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`font-black tracking-tighter leading-[0.95] max-w-xl xl:max-w-2xl transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}
               style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
             >
               Código{" "}
               <span className="text-sky">para resolver</span>{" "}
               <br />problemas reales
             </h2>
-            <p className={`text-[#9CA3AF] max-w-sm xl:max-w-md leading-relaxed text-sm xl:text-base transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <p className={`text-[#9CA3AF] max-w-sm xl:max-w-md leading-relaxed text-sm xl:text-base transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}>
               Me apasiona convertir ideas complejas en soluciones elegantes. Desde la arquitectura del servidor hasta la animación del botón, cada detalle importa.
             </p>
           </div>
         </div>
 
         {/* Stats */}
-        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden mb-16 sm:mb-20 transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden mb-16 sm:mb-20 transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}>
           {stats.map((s, i) => (
             <div
               key={s.label}
@@ -95,7 +95,7 @@ export default function AboutSection() {
             {timeline.map((item, i) => (
             <div
               key={item.year}
-              className={`relative group transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`relative group transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}
               style={{ transitionDelay: `${400 + i * 150}ms` }}
             >
               {/* Year Badge */}

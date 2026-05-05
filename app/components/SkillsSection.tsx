@@ -51,16 +51,16 @@ export default function SkillsSection() {
   return (
     <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-      <div className="absolute -left-40 bottom-0 w-[500px] xl:w-[700px] h-[500px] xl:h-[700px] rounded-full bg-[#6366F1]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute -left-40 bottom-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-[#6366F1]/5 blur-[60px] md:blur-[120px] pointer-events-none transform-gpu" />
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div id="skills" className="mb-12 sm:mb-16">
-          <p className={`section-label mb-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <p className={`section-label mb-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}>
             Stack
           </p>
           <h2
-            className={`font-black tracking-tighter leading-[0.95] transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            className={`font-black tracking-tighter leading-[0.95] transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-8"}`}
             style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)" }}
           >
             Mis <span className="text-sky">herramientas</span>
@@ -74,8 +74,8 @@ export default function SkillsSection() {
               <div
                 key={group.label}
                 style={{
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? "translateX(0)" : "translateX(-40px)",
+                  opacity: visible ? 1 : 1, // Always visible on mobile
+                  transform: visible ? "translateX(0)" : "md:translateX(-40px)",
                   transition: `opacity 0.7s ease ${gi * 150}ms, transform 0.7s ease ${gi * 150}ms`,
                 }}
               >
@@ -109,7 +109,11 @@ export default function SkillsSection() {
           </div>
 
           {/* Tools grid + quote */}
-          <div style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(40px)", transition: "opacity 0.7s ease 500ms, transform 0.7s ease 500ms" }}>
+          <div style={{ 
+            opacity: 1, 
+            transform: visible ? "translateX(0)" : "md:translateX(40px)", 
+            transition: "opacity 0.7s ease 500ms, transform 0.7s ease 500ms" 
+          }}>
             <p className="font-mono text-xs tracking-widest uppercase text-[#9CA3AF] mb-5 sm:mb-6">Otras tecnologías & herramientas</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3">
               {tools.map((tool, i) => (

@@ -6,11 +6,12 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-[100dvh] flex items-center overflow-hidden noise">
       {/* Background gradients - optimized for performance */}
-      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] xl:w-[800px] xl:h-[800px] rounded-full bg-sky/5 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] rounded-full bg-sky/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky/20 to-transparent" />
+      <div className="absolute -left-60 top-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] xl:w-[700px] xl:h-[700px] rounded-full bg-[#6366F1]/5 blur-[60px] md:blur-[120px] pointer-events-none transform-gpu" />
+      <div className="absolute top-1/4 left-1/4 w-[200px] h-[200px] md:w-[300px] md:h-[300px] xl:w-[500px] xl:h-[500px] rounded-full bg-sky/5 blur-[50px] md:blur-[100px] pointer-events-none transform-gpu" />
 
       {/* Profile Image - Desktop */}
-      <div className="hidden lg:flex absolute right-[20%] top-[15%] w-64 h-64 sm:w-80 sm:h-80 xl:w-96 xl:h-96 items-center justify-center border border-white/20 rounded-full overflow-hidden glass-card z-20 transition-all duration-700">
+      <div className="hidden lg:flex absolute right-[20%] top-[15%] w-64 h-64 sm:w-80 sm:h-80 xl:w-96 xl:h-96 items-center justify-center border border-white/20 rounded-full overflow-hidden glass-card z-20 transition-all duration-700 transform-gpu">
         <img 
           src="/fotoPerfil.png" 
           alt="Anyelo" 
