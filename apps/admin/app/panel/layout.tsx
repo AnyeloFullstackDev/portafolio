@@ -35,7 +35,7 @@ export default async function PanelLayout({
 
         <div className="flex items-center gap-3">
           <a
-            href="http://localhost:3000"
+            href={process.env.NEXT_PUBLIC_SITE_URL || "https://portafolio-pkjv.vercel.app/"}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg border border-glass-border px-3 py-1.5 text-xs text-chalk-dim transition hover:border-sky/40 hover:text-chalk"
