@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-void:          #0D0F1A;
+  --color-void-2:        #111320;
+  --color-void-3:        #171A2E;
+  --color-sky:           #0EA5E9;
+  --color-sky-bright:    #7DD3FC;
+  --color-sky-dim:       #0369A1;
+  --color-chalk:         #F5F3EF;
+  --color-chalk-dim:     #9CA3AF;
+  --color-glass:         rgba(255, 255, 255, 0.04);
+  --color-glass-border:  rgba(255, 255, 255, 0.08);
+  --color-danger:        #F87171;
+  --font-sans:           system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-chalk);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sky-bright);
+  outline-offset: 2px;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@portfolio/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Tipos generados y consultas tipadas del CMS del portafolio (Supabase/PostgreSQL).",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/database.types.ts",
+    "./publication": "./src/publication.ts",
+    "./models": "./src/models.ts",
+    "./queries": "./src/queries.ts",
+    "./mutations": "./src/mutations.ts",
+    "./contact": "./src/contact.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "generate:types": "pnpm dlx supabase@3.1.0 gen types typescript --local --schema public > /tmp/database.types.ts && pnpm dlx oxfmt@latest /tmp/database.types.ts && cp /tmp/database.types.ts src/database.types.ts"
+  },
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2.119.0"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "2.119.0",
+    "typescript": "^5"
+  }
+}
