@@ -35,8 +35,13 @@ export async function iniciarSesion(
   const { data, error } = await supabase.auth.signInWithPassword(parsed.data);
 
   if (error || !data.user) {
-    // Mensaje genérico: no se revela si el correo existe.
-    return { error: MENSAJE_CREDENCIALES };
+    console.error("[Login Auth Error]:", error?.message, error?.status);
+    return {
+      error:
+        error?.message === "Invalid login credentials"
+          ? MENSAJE_CREDENCIALES
+          : error?.message || MENSAJE_CREDENCIALES,
+    };
   }
 
   const { data: claimsData, error: claimsError } =

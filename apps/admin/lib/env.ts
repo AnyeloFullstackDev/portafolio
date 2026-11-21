@@ -19,7 +19,7 @@ export class SupabaseConfigError extends Error {
 }
 
 export function getSupabaseConfig(): SupabaseConfig {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  let url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!url || !anonKey) {
@@ -28,5 +28,8 @@ export function getSupabaseConfig(): SupabaseConfig {
     );
   }
 
-  return { url, anonKey };
+  // Sanitizar URL: eliminar /rest/v1 o trailing slashes si fueron incluidos por error
+  url = url.trim().replace(/\/rest\/v1\/?$/, "").replace(/\/+$/, "");
+
+  return { url, anonKey: anonKey.trim() };
 }

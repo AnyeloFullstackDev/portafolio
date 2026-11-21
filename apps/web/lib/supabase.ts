@@ -6,17 +6,19 @@ import type { Database } from "@portfolio/db";
  * Retorna null si las variables de entorno no están configuradas.
  */
 export function getPublicSupabaseClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  let url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!url || !anonKey) {
     return null;
   }
 
-  return createClient<Database>(url, anonKey, {
+  // Sanitizar URL: eliminar /rest/v1 o trailing slashes si fueron incluidos por error
+  url = url.trim().replace(/\/rest\/v1\/?$/, "").replace(/\/+$/, "");
+
+  return createClient<Database>(url, anonKey.trim(), {
     auth: {
       persistSession: false,
     },
   });
 }
-
